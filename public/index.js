@@ -12,11 +12,13 @@ $(document).ready(function() {
         dataType: "json",
         success: function(data) {
             data.forEach(function (datum) {
-                var article = template
-                  .replace(':name:', datum.fecha)
-                  .replace(':summary:', datum.moneda)
-                $( ".loader" ).append(article)
-                console.log(article)
+                if (datum.moneda === '484') {
+                    var article = template
+                      .replace(':name:', datum.descripcion)
+                      .replace(':summary:', datum.moneda)
+                    $( ".loader" ).append(article)
+                    console.log(article)
+                    }
             })
             }
     });
