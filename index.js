@@ -27,7 +27,8 @@ app.get('/registros', (req, res) => {
 	        pesos: entry.substring(1116,1129)
 	    });
 	  });
-	  res.json(jsonArr)
+	  var temp = jsonArr.slice(0, 300)
+	  res.json(temp)
 	});
 })
 app.listen(3000, () => console.log('Servidor iniciado con Express en el puerto 3000'))
